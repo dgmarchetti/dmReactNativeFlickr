@@ -6,18 +6,18 @@ import Button from './Button';
 import { Actions } from 'react-native-router-flux';
 
 const CommentDetail = ({author, content}) => {
-  const {headerContentStyle, headerTextStyle} = styles;
+  const {headerContentStyle, authorStyle, commentStyle} = styles;
 
   return (
     <Card>
       <CardSection>
         <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{author}</Text>
+          <Text style={authorStyle}>{author}:</Text>
         </View>
       </CardSection>
       <CardSection>
         <View style={headerContentStyle}>
-          <Text style={headerTextStyle}>{content}</Text>
+          <Text style={commentStyle}>{content}</Text>
         </View>
       </CardSection>
     </Card>
@@ -29,8 +29,14 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
-  headerTextStyle: {
-    fontSize: 18,
+  authorStyle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  commentStyle: {
+    paddingTop: 5,
+    fontSize: 14,
+    maxWidth: 300,
   },
 };
 

@@ -11,7 +11,7 @@ import PhotoList from './src/components/PhotoList';
 import CommentList from './src/components/CommentList';
 import {Router, Scene, Stack} from 'react-native-router-flux';
 
-//console.disableYellowBox = true;
+console.disableYellowBox = true;
 // Create a component
 const App = () => (
   <Router>
