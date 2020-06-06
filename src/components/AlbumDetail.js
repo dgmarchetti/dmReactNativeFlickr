@@ -17,8 +17,8 @@ const AlbumDetail = ({title, albumId}) => {
       </CardSection>
 
       <CardSection>
-        <Button onPress={() => Actions.photolist({albumId: albumId})}>
-          See Now!
+        <Button onPress={() => Actions.photolist({albumId: albumId, albumTitle: title})}>
+          See Album!
         </Button>
       </CardSection>
     </Card>
@@ -27,11 +27,17 @@ const AlbumDetail = ({title, albumId}) => {
 
 const styles = {
   headerContentStyle: {
+    flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-around',
   },
   headerTextStyle: {
-    fontSize: 18,
+    alignSelf: 'center',
+    color: '#11233E',
+    fontSize: 20,
+    fontWeight: '600',
+    paddingTop: 12,
+    paddingBottom: 12,
   },
   thumbnailStyle: {
     height: 50,

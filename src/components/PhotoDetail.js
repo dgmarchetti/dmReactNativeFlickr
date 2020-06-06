@@ -3,8 +3,9 @@ import {Text, View, Image, Linking} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
+import { Actions } from 'react-native-router-flux';
 
-const PhotoDetail = ({title, imageUrl}) => {
+const PhotoDetail = ({id, title, imageUrl}) => {
   const {
     thumbnailStyle,
     headerContentStyle,
@@ -29,7 +30,8 @@ const PhotoDetail = ({title, imageUrl}) => {
       </CardSection>
 
       <CardSection>
-        <Button onPress={() => Linking.openURL(imageUrl)}>See Now!</Button>
+        <Button onPress={() => Linking.openURL(imageUrl)}>See on browser!</Button>
+        <Button onPress={() => Actions.photocomments({imageTitle: title, imageUrl: imageUrl, imageId:id})}>View comments!</Button>
       </CardSection>
     </Card>
   );

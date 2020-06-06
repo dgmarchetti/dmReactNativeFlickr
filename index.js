@@ -8,8 +8,10 @@ import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
 import AlbumList from './src/components/AlbumList';
 import PhotoList from './src/components/PhotoList';
+import CommentList from './src/components/CommentList';
 import {Router, Scene, Stack} from 'react-native-router-flux';
 
+//console.disableYellowBox = true;
 // Create a component
 const App = () => (
   <Router>
@@ -21,9 +23,14 @@ const App = () => (
         initial={true}
       />
       <Scene
-        key="photolist" 
-        component={PhotoList} 
+        key="photolist"
+        component={PhotoList}
         title="Photos" />
+      <Scene
+        key="photocomments"
+        component={CommentList}
+        title="Comments"
+      />
     </Stack>
   </Router>
 );
